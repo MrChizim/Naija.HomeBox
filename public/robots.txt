@@ -1,0 +1,11 @@
+# Robots.txt for Naija HomeBox
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://naijahomebox.com/sitemap.xml
+
+# Disallow checkout and confirmation pages from indexing
+Disallow: /checkout
+Disallow: /order-confirmation
