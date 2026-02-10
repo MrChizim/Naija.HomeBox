@@ -5,10 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naija HomeBox - Authentic Nigerian Food Bundles UK</title>
     <meta name="description" content="Order authentic Nigerian food bundles delivered to your door in the UK. Premium egusi, crayfish, stockfish, ogbono, and more.">
+    <link rel="canonical" href="https://naijahomebox.com/">
     <link rel="icon" type="image/png" href="logo.png">
-    <meta property="og:image" content="logo.png">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://naijahomebox.com/">
+    <meta property="og:title" content="Naija HomeBox - Authentic Nigerian Food Bundles UK">
+    <meta property="og:description" content="Order authentic Nigerian food bundles delivered to your door in the UK. Premium egusi, crayfish, stockfish, ogbono, and more.">
+    <meta property="og:image" content="https://naijahomebox.com/logo.png">
+    <meta property="og:site_name" content="Naija HomeBox">
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="logo.png">
+    <meta name="twitter:title" content="Naija HomeBox - Authentic Nigerian Food Bundles UK">
+    <meta name="twitter:description" content="Order authentic Nigerian food bundles delivered to your door in the UK. Premium egusi, crayfish, stockfish, ogbono, and more.">
+    <meta name="twitter:image" content="https://naijahomebox.com/logo.png">
+
+    <!-- Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Naija HomeBox",
+        "description": "Authentic Nigerian food bundles delivered across the UK. Premium egusi, crayfish, stockfish, ogbono, and more.",
+        "url": "https://naijahomebox.com",
+        "logo": "https://naijahomebox.com/logo.png",
+        "image": "https://naijahomebox.com/logo.png",
+        "telephone": "+447413298636",
+        "email": "Naijahomebox@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "GB"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "United Kingdom"
+        },
+        "priceRange": "££",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "sameAs": [
+            "https://instagram.com/naija.homebox",
+            "https://www.tiktok.com/@naija.homebox"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Complete 5kg Nigerian Food Bundle",
+        "description": "Everything you need for authentic Nigerian cooking: Egusi, Ogbono, Stockfish, Crayfish, Dry Fish, Pumpkin Leaves, Bitter Leaves, Dry Pepper, Dudu Osun Soap, and Bathing Sponge.",
+        "image": "https://naijahomebox.com/egusi.JPG",
+        "brand": {
+            "@type": "Brand",
+            "name": "Naija HomeBox"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "49.99",
+            "priceCurrency": "GBP",
+            "availability": "https://schema.org/InStock",
+            "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                    "@type": "MonetaryAmount",
+                    "value": "4.99",
+                    "currency": "GBP"
+                },
+                "shippingDestination": {
+                    "@type": "DefinedRegion",
+                    "addressCountry": "GB"
+                },
+                "deliveryTime": {
+                    "@type": "ShippingDeliveryTime",
+                    "handlingTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 1,
+                        "maxValue": 2,
+                        "unitCode": "d"
+                    },
+                    "transitTime": {
+                        "@type": "QuantitativeValue",
+                        "minValue": 2,
+                        "maxValue": 4,
+                        "unitCode": "d"
+                    }
+                }
+            }
+        }
+    }
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1584,6 +1676,40 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="pepper.JPG" alt="Dry Pepper">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Spices</div>
+                        <h3>Ground Dry Pepper</h3>
+                        <div class="product-weight">250g</div>
+                        <div class="product-footer">
+                            <div class="product-price">£5.00</div>
+                            <button class="add-to-cart" onclick="addToCart('pepper', 'Ground Dry Pepper', 5.00, '250g', 'pepper.JPG')">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="soap.JPG" alt="African Bathing Sponge">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-category">Personal Care</div>
+                        <h3>African Bathing Sponge</h3>
+                        <div class="product-weight">1 piece</div>
+                        <div class="product-footer">
+                            <div class="product-price">£2.50</div>
+                            <button class="add-to-cart" onclick="addToCart('sponge', 'African Bathing Sponge', 2.50, '1 piece', 'soap.JPG')">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1823,12 +1949,12 @@
             }
 
             const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            const delivery = cart.length ? 4.99 : 0;
+            const delivery = (cart.length === 0) ? 0 : (subtotal >= 50 ? 0 : 4.99);
             const total = subtotal + delivery;
             const totalWeight = cart.reduce((sum, item) => sum + (weightToGrams(item.weight) * item.qty), 0);
 
             cartSubtotal.textContent = `£${subtotal.toFixed(2)}`;
-            cartDelivery.textContent = `£${delivery.toFixed(2)}`;
+            cartDelivery.textContent = delivery === 0 && cart.length > 0 ? 'FREE' : `£${delivery.toFixed(2)}`;
             cartTotal.textContent = `£${total.toFixed(2)}`;
             cartWeight.textContent = totalWeight > 0 ? `${totalWeight}g` : '0g';
 
@@ -1905,9 +2031,10 @@
             }
             // For now, redirect to WhatsApp with order details
             const orderText = cart.map(item => `${item.qty}x ${item.name} (${item.weight})`).join('%0A');
-            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            const delivery = cart.length ? 4.99 : 0;
-            const message = `Hello! I'd like to place an order:%0A%0A${orderText}%0A%0ASubtotal: £${total.toFixed(2)}%0AStandard delivery: £${delivery.toFixed(2)}%0ATotal: £${(total + delivery).toFixed(2)}`;
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const delivery = subtotal >= 50 ? 0 : 4.99;
+            const deliveryText = delivery === 0 ? 'FREE (order over £50)' : `£${delivery.toFixed(2)}`;
+            const message = `Hello! I'd like to place an order:%0A%0A${orderText}%0A%0ASubtotal: £${subtotal.toFixed(2)}%0ADelivery: ${deliveryText}%0ATotal: £${(subtotal + delivery).toFixed(2)}`;
             window.open(`https://wa.me/447413298636?text=${message}`, '_blank');
         }
 
