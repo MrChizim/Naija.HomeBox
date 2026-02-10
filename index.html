@@ -1631,17 +1631,23 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" id="crayfish-card">
                     <div class="product-image">
-                        <img src="crayfish.JPG" alt="Crayfish">
+                        <img src="crayfish.JPG" alt="Nigerian Crayfish - Dried Shrimp">
                     </div>
                     <div class="product-content">
                         <div class="product-category">Seafood</div>
-                        <h3>Ground Crayfish</h3>
+                        <h3>Crayfish</h3>
                         <div class="product-weight">250g</div>
+                        <div class="grind-option">
+                            <div class="grind-toggle">
+                                <button class="active" onclick="setGrind('crayfish', false, this)">Whole</button>
+                                <button onclick="setGrind('crayfish', true, this)">Ground +£1.00</button>
+                            </div>
+                        </div>
                         <div class="product-footer">
-                            <div class="product-price">£8.00</div>
-                            <button class="add-to-cart" onclick="addToCart('crayfish', 'Ground Crayfish', 8.00, '250g', 'crayfish.JPG')">
+                            <div class="product-price" id="crayfish-price">£8.00</div>
+                            <button class="add-to-cart" onclick="addGrindableToCart('crayfish', 'Crayfish', 8.00, 1.00, '250g', 'crayfish.JPG')">
                                 <i class="fas fa-plus"></i>
                             </button>
                         </div>
@@ -1965,7 +1971,8 @@
         const grindState = {
             egusi: { ground: false, basePrice: 12.00, grindFee: 1.50 },
             ogbono: { ground: false, basePrice: 10.00, grindFee: 1.50 },
-            pepper: { ground: false, basePrice: 5.00, grindFee: 1.00 }
+            pepper: { ground: false, basePrice: 5.00, grindFee: 1.00 },
+            crayfish: { ground: false, basePrice: 8.00, grindFee: 1.00 }
         };
 
         function setGrind(product, isGround, btn) {
