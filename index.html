@@ -1570,7 +1570,7 @@
                         <span class="original">£65.00</span>
                     </div>
                     <div class="bundle-buttons">
-                        <button class="btn btn-white" onclick="addToCart('5kg-bundle', 'Complete 5kg Bundle', 49.99, '5kg', 'egusi.JPG'); toggleCart();">
+                        <button class="btn btn-white" onclick="addBundleToCart()">
                             <i class="fas fa-shopping-cart"></i>
                             Add to Cart
                         </button>
@@ -2080,6 +2080,11 @@
             }
             updateCart();
             showNotification(`${name} added to cart!`);
+        }
+
+        function addBundleToCart() {
+            addToCart('5kg-bundle', 'Complete 5kg Bundle', 49.99, '5kg', 'egusi.JPG');
+            toggleCart();
         }
 
         function updateQty(index, change) {
